@@ -21,7 +21,10 @@ struct ContentView: View {
             TextInput(value: $password, mode: .password, isHidden: true)
         }
         .padding()
+        
+        
     }
+    
 }
 
 #Preview {

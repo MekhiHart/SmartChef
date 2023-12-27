@@ -23,10 +23,12 @@ struct TextInput: View {
 
             vm.icon
                 .frame(width: 15, height: 20)
-                .padding(.horizontal, 10)
+                .padding(.horizontal, 13)
         } //HStack
-        .frame(height: 35)
-        .border(Color.gray, width: 2)
+        .frame(height: 44)
+        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 2))
+
+        
     } // View
 }
 
