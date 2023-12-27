@@ -17,7 +17,7 @@ class TextInputViewModel: ObservableObject {
         self._value = value
         self.mode = mode
         self.isHidden = isHidden
-    }
+    } // init
 
     var genericFieldText: some View {
         Group {
@@ -27,7 +27,7 @@ class TextInputViewModel: ObservableObject {
                 SecureField(mode.info.handle, text: $value)
             }
         }
-    }
+    } // genericFieldText
 
     var icon: some View {
         Group {
@@ -42,7 +42,7 @@ class TextInputViewModel: ObservableObject {
                 mode.info.icon
             }
         }
-    }
+    } // icon
 
     enum Mode: String {
         case username

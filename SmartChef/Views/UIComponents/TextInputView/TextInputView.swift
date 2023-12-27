@@ -24,10 +24,10 @@ struct TextInput: View {
             vm.icon
                 .frame(width: 15, height: 20)
                 .padding(.horizontal, 10)
-        }
+        } //HStack
         .frame(height: 35)
         .border(Color.gray, width: 2)
-    }
+    } // View
 }
 
 struct TextInput_Previews: PreviewProvider {
