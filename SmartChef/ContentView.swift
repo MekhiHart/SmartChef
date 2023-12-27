@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var test = "Hi"
+    @State var test = ""
     @State var password: String = ""
     
     var body: some View {
@@ -17,8 +17,8 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
-            TextInput(value: $test, mode: .username)
-            TextInput(value: $password, mode: .password)
+            TextInput(value: $test, mode: .username, isHidden: false)
+            TextInput(value: $password, mode: .password, isHidden: true)
         }
         .padding()
     }

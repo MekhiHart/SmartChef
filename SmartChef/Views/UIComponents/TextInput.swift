@@ -11,22 +11,31 @@ import SwiftUI
 struct TextInput: View {
     @Binding var value: String
     let mode: Mode
-    
-    init(value: String, mode: Mode, isHidden: Bool) {
-        self.value = value
-        self.mode = mode
-        self._isHidden = State(initialValue: mode == .password ? false : true)
-    }
+    @State var isHidden: Bool
     
     var genericFieldText:some View{
         Group{
-            if self.{
+            if !isHidden{
                 TextField(mode.info.handle, text: $value)
             } else{
                 SecureField(mode.info.handle, text: $value)
             }
         }
     } // genericFieldText
+    
+    var icon: some View{
+        Group{
+            if mode == .password{
+                Image(systemName: isHidden ? "eye" : "eye.slash")
+                    .onTapGesture {
+                        isHidden.toggle()
+                    }
+                
+            } else{
+                mode.info.icon
+            }
+        }
+    }
     
     enum Mode: String{
         case username
@@ -35,12 +44,12 @@ struct TextInput: View {
 //        case lastName = "Last Name"
 //        case emailAddress = "Email Address"
         
-        var info: (handle: String, icon: Image, onTapAction: () -> Void){
+        var info: (handle: String, icon: Image){
             switch self{
             case .username:
-                return ("Username", Image(systemName: "person"), {})
+                return ("Username", Image(systemName: "person"))
             case .password:
-                return ("Password", Image(systemName: "eye"),  {})
+                return ("Password", Image(systemName: "eye"))
             }
         }
     } // Mode
@@ -51,13 +60,11 @@ struct TextInput: View {
                 .padding(.leading, 13)
                 .padding(.vertical, 10)
             
-            mode.info.icon
-                .frame(width: 25)
-                .padding(.horizontal, 8)
-                .onTapGesture {
-                    isHidden.toggle()
-                }
+            icon
+                .frame(width: 15, height: 20)
+                .padding(.horizontal, 10)
         } // HStack
+        .frame(height: 35)
         .border(.gray, width: 2)
     } // body
     
@@ -65,8 +72,8 @@ struct TextInput: View {
 
 #Preview {
     Group{
-        TextInput(value: .constant(""), mode: .username)
-        TextInput(value: .constant(""), mode: .password)
+        TextInput(value: .constant(""), mode: .username, isHidden: false)
+        TextInput(value: .constant(""), mode: .password, isHidden: true)
     }
     
 }
