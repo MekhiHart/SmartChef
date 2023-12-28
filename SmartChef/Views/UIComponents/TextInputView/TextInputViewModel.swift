@@ -45,8 +45,8 @@ class TextInputViewModel: ObservableObject {
     } // icon
 
     enum Mode: String {
-        case username
-        case password
+        case username, password, firstName, lastName, emailAddress, confirmPassword
+        
 
         var info: (handle: String, icon: Image) {
             switch self {
@@ -54,7 +54,16 @@ class TextInputViewModel: ObservableObject {
                 return ("Username", Image(systemName: "person"))
             case .password:
                 return ("Password", Image(systemName: "eye"))
+            case .confirmPassword:
+                return ("Confirm Password", Image(systemName: "eye"))
+            case .firstName:
+                return ("First Name", Image(systemName: "person"))
+            case .lastName:
+                return ("Last Name", Image(systemName: "person"))
+            case .emailAddress:
+                return ("Emil Address", Image(systemName: "mail"))
             }
+            
         }
     } // Mode
 }
