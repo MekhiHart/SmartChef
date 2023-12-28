@@ -19,35 +19,10 @@ class TextInputViewModel: ObservableObject {
         self.isHidden = isHidden
     } // init
 
-    var genericFieldText: some View {
-        Group {
-            if !isHidden {
-                TextField(mode.info.handle, text: $value)
-            } else {
-                SecureField(mode.info.handle, text: $value)
-            }
-        }
-    } // genericFieldText
 
-    var icon: some View {
-        Group {
-            if mode == .password {
-                Image(systemName: isHidden ? "eye" : "eye.slash")
-                    .onTapGesture {
-                        self.isHidden.toggle()
-                        print("isHidden: \(self.isHidden)")
-                    }
-
-            } else {
-                mode.info.icon
-            }
-        }
-    } // icon
 
     enum Mode: String {
         case username, password, firstName, lastName, emailAddress, confirmPassword
-        
-
         var info: (handle: String, icon: Image) {
             switch self {
             case .username:

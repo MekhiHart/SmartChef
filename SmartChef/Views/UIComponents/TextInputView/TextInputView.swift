@@ -14,14 +14,46 @@ struct TextInput: View {
     init(value: Binding<String>, mode: TextInputViewModel.Mode, isHidden: Bool) {
         self.vm = TextInputViewModel(value: value, mode: mode, isHidden: isHidden)
     }
+    
+    var genericFieldText: some View {
+        Group {
+            if vm.mode != .password ||  vm.mode != .confirmPassword{
+                ZStack{
+                    TextField(vm.mode.info.handle, text: vm.$value)
+                        .opacity(vm.isHidden ? 0 : 1)
+                    SecureField(vm.mode.info.handle, text: vm.$value)
+                        .opacity(vm.isHidden ? 1 : 0)
+                
+                }
+            }  else {
+                TextField(vm.mode.info.handle, text: vm.$value)
+                }
+            
+        }
+    } // genericFieldText
+
+    var icon: some View {
+        Group {
+            if vm.mode == .password {
+                Image(systemName: vm.isHidden ? "eye.slash" :"eye")
+                    .onTapGesture {
+                        vm.isHidden.toggle()
+                        print("isHidden: \(vm.isHidden)")
+                    }
+
+            } else {
+                vm.mode.info.icon
+            }
+        }
+    } // icon
 
     var body: some View {
         HStack {
-            vm.genericFieldText
+            genericFieldText
                 .padding(.leading, 13)
                 .padding(.vertical, 10)
 
-            vm.icon
+            icon
                 .frame(width: 15, height: 20)
                 .padding(.horizontal, 13)
         } //HStack
