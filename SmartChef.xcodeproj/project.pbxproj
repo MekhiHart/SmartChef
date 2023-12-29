@@ -13,6 +13,7 @@
 		3E143F7C2B39D5CA00780810 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E143F7B2B39D5CA00780810 /* Preview Assets.xcassets */; };
 		3E143F872B39D67700780810 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E143F862B39D67700780810 /* TextInputView.swift */; };
 		3E143F8A2B39DE8600780810 /* ConditionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E143F892B39DE8600780810 /* ConditionalView.swift */; };
+		3E6FA9962B3E3D900066B095 /* RoundedRectangularButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6FA9952B3E3D8F0066B095 /* RoundedRectangularButtonView.swift */; };
 		3E8D10AE2B3CDA8700694838 /* TextInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D10AD2B3CDA8700694838 /* TextInputViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		3E143F7B2B39D5CA00780810 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3E143F862B39D67700780810 /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
 		3E143F892B39DE8600780810 /* ConditionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalView.swift; sourceTree = "<group>"; };
+		3E6FA9952B3E3D8F0066B095 /* RoundedRectangularButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangularButtonView.swift; sourceTree = "<group>"; };
 		3E8D10AD2B3CDA8700694838 /* TextInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 		3E143F842B39D61B00780810 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				3E6FA9942B3E3D630066B095 /* RoundedRectangularButtonView */,
 				3E8D10AC2B3CDA6400694838 /* TextInputView */,
 			);
 			path = UIComponents;
@@ -105,6 +108,14 @@
 				3E143F892B39DE8600780810 /* ConditionalView.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3E6FA9942B3E3D630066B095 /* RoundedRectangularButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				3E6FA9952B3E3D8F0066B095 /* RoundedRectangularButtonView.swift */,
+			);
+			path = RoundedRectangularButtonView;
 			sourceTree = "<group>";
 		};
 		3E8D10AC2B3CDA6400694838 /* TextInputView */ = {
@@ -191,6 +202,7 @@
 				3E143F752B39D5C900780810 /* SmartChefApp.swift in Sources */,
 				3E143F872B39D67700780810 /* TextInputView.swift in Sources */,
 				3E143F8A2B39DE8600780810 /* ConditionalView.swift in Sources */,
+				3E6FA9962B3E3D900066B095 /* RoundedRectangularButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,7 +55,7 @@ struct TextInput: View {
 
             icon
                 .frame(width: 15, height: 20)
-                .padding(.horizontal, 13)
+                .padding(.trailing, 13)
         } //HStack
         .frame(height: 44)
         .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 2))
