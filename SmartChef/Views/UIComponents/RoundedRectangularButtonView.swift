@@ -67,6 +67,6 @@ struct RoundedRectangularButtonView: View {
 #Preview {
     RoundedRectangularButtonView(
         icon: "eye", text: "Hello", color: .yellow, contentAlignment: .right){
-            print("Hello World")
+            // DO LOGIC HERE
         }
 }

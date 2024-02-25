@@ -37,7 +37,6 @@ struct TextInput: View {
                 Image(systemName: isHidden ? "eye.slash" :"eye")
                     .onTapGesture {
                         isHidden.toggle()
-                        print("isHidden: \(isHidden)")
                     }
 
             } else {
